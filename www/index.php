@@ -1,26 +1,11 @@
 <?php
+include_once '../config/config.php'; //приложили файл с константами
+include_once '../library/mainFunctions.php';//заинклюдили файл с общими функциями
+
 // определяем с каким контроллером будем работать
 $controllerName = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'Index';
 
-echo 'Подключаемый php файл (Контроллер) = ' . $controllerName . '<br/>';
-
-//определяем с какой функцией будем работать (какой экшен)
+//определяем с какой функцией будем работать (какой Экшен)
 $actionName = isset($_GET['action']) ? $_GET['action'] : 'Index';
 
-echo 'Функция формирующая страницу (Экшен) = ' . $actionName . '<br/>';
-
-//подключаем требуемый контроллер
-include_once '../controllers/' . $controllerName . 'Controller.php';
-
-//формируем название вызываемой функции
-$function = $actionName . 'Action';
-
-echo 'Полное название вызываемой функции = ' . $function . '<br/>';
-
-//вызываем требуемую функцию
-
-$function();
-
-
-
-
+loadPage($controllerName, $actionName);
