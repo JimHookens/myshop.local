@@ -22,7 +22,7 @@ function loadPage($smarty, $controllerName, $actionName = 'index') {
 
 function loadTemplate($smarty, $templateName){
 
-    $smarty->display($templateName.TempletePostfix);
+    $smarty->display($templateName.TemplatePostfix);
 
 }
 /**

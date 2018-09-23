@@ -12,9 +12,11 @@ function testAction(){
  * @param object $smarty
  */
 function indexAction($smarty){
-    
+
     $smarty->assign('pageTitle', 'Главная страница');
 
-    loadTemplate($smarty, 'index');
+    loadTemplate($smarty, 'header');
+    //loadTemplate($smarty, 'index');
+    loadTemplate($smarty, 'footer');
 }
 
