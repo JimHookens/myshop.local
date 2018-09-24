@@ -8,11 +8,11 @@
  * @param string $controllerName название контроллера
  * @param string $actionName название функции обработки страницы
  */
-function loadPage($smarty, $controllerName, $actionName = 'index') {
+function loadPage($smarty, $controllerName, $db, $actionName = 'index') {
     //подключаем требуемый контроллер
     include_once PathPrefix . $controllerName . PathPostfix;
     $function = $actionName . 'Action';//формируем название вызываемой функции
-    $function($smarty);//запускаем вызванную функцию и передаем объект $smarty
+    $function($smarty, $db);//запускаем вызванную функцию и передаем db и объект $smarty
 }
 /**
  * Загрузка шаблона

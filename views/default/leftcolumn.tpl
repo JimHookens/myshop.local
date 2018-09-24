@@ -2,8 +2,8 @@
         <div id="LeftColumn">
             <div id="LeftMenu">
                 <div class="menuCaption">Меню:</div>
-                пункт 1<br>
-                пункт 2<br>
-                пункт 3<br>
+                {foreach $rsCategories as $value}
+                    <a href="#">{$value['name']}</a><br>
+                 {/foreach}   
             </div>
         </div>
