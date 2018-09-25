@@ -32,9 +32,26 @@ function loadTemplate($smarty, $templateName){
  * @param variant $value переменная для вывода ее на страницу
  */
 function d($value = null, $die = 1) {
-    echo 'MyDebug:<br><pre>';
+    echo '<br>MyDebug:<br><pre>';
     print_r($value);
     echo '</pre>';
 
     if ($die) die;
+}
+
+/**
+ * Преобазование результата работы функции выборки в ассоциативный массив
+ *
+ * @param sql_query_recordSet $rs набор строк - результат работы SELECT
+ *
+ * @return assoc_array $arrRs
+ */
+function createSmartyRsArray($rs) {
+    if(!$rs) return false;
+
+    $arrRs = array();
+    while ($row = mysqli_fetch_assoc($rs)) {
+        $arrRs[] = $row;
+    }
+    return $arrRs;
 }
