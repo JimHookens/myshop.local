@@ -8,9 +8,6 @@ include_once '../models/CategoriesModel.php';
 include_once '../models/ProductsModel.php';
 
 
-function testAction(){
-    echo 'IndexConttoller.php > testAction';
-}
 /**
  * Формирование главной страницы сайта
  * @param object $smarty

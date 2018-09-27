@@ -45,3 +45,11 @@ function getAllMainCatsWithChildren($db) {
     }
     return $smartyRs;
 }
+
+function getCategoryById($catId, $db){
+    $catId = intval($catId);
+    $sql = "SELECT * FROM categories WHERE `id`= '$catId'";
+    $rs = mysqli_query($db, $sql);
+    return mysqli_fetch_assoc($rs);//возвращает асоциативный массив из рекорд сета
+}
+
