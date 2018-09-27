@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2018-09-25 12:56:36
+<?php /* Smarty version Smarty-3.1.6, created on 2018-09-26 09:21:47
          compiled from "../views/default\leftcolumn.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11012313435ba7a1b0668213-06239553%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd86026e14cd6d235743b3882c7fc10799a2fe413' => 
     array (
       0 => '../views/default\\leftcolumn.tpl',
-      1 => 1537869394,
+      1 => 1537942904,
       2 => 'file',
     ),
   ),
@@ -34,7 +34,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['value']->key => $_smarty_tpl->tpl_vars['value']->value){
 $_smarty_tpl->tpl_vars['value']->_loop = true;
 ?>
-            <a href="#"><?php echo $_smarty_tpl->tpl_vars['value']->value['name'];?>
+            <a href="/?controller=category&id=<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['value']->value['name'];?>
 </a><br>
             <?php if (isset($_smarty_tpl->tpl_vars['value']->value['children'])){?>
                 <?php  $_smarty_tpl->tpl_vars['child'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['child']->_loop = false;
@@ -42,7 +43,8 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['child']->key => $_smarty_tpl->tpl_vars['child']->value){
 $_smarty_tpl->tpl_vars['child']->_loop = true;
 ?>
-                    --<a href="#"><?php echo $_smarty_tpl->tpl_vars['child']->value['name'];?>
+                    --<a href="/?controller=category&id=<?php echo $_smarty_tpl->tpl_vars['child']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['child']->value['name'];?>
 </a><br>
                 <?php } ?>                    
             <?php }?>

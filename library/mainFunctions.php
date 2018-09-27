@@ -35,7 +35,7 @@ function d($value = null, $die = 1) {
     echo '<br>MyDebug:<br><pre>';
     print_r($value);
     echo '</pre>';
-
+    echo "Type of returns is: ".gettype($value);
     if ($die) die;
 }
 

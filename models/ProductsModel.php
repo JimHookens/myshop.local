@@ -22,3 +22,20 @@ function getLastProducts($db, $limit = null) {
     $rs = mysqli_query($db, $sql);
     return createSmartyRsArray($rs);
 }
+/**
+ * Получить продукты для категории $catId
+ *
+ * @param mysql_linc $db ссылка на базу данных $db
+ * @param integer $catId (category_id)
+ *
+ * @return assoc_array $rs все продукты определенной категории
+ */
+
+function getProductByCat($db, $catId){
+    $catId = intval($catId);
+    $sql = "SELECT *
+            FROM `products`
+            WHERE `category_id` = '$catId'";
+    $rs = mysqli_query($db, $sql);
+    return createSmartyRsArray($rs);
+}
